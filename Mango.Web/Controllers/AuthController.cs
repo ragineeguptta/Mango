@@ -15,9 +15,9 @@ namespace Mango.Web.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            LoginRequestDto loginRequestDto = new LoginRequestDto();    
+            LoginRequestDto loginRequestDto = new LoginRequestDto();
 
-            return View();
+            return View(loginRequestDto);
         }
 
 
@@ -26,7 +26,12 @@ namespace Mango.Web.Controllers
         {
             RegistrationRequestDto registerRequestDto = new RegistrationRequestDto();
 
-            return View();
+            return View(registerRequestDto);
+        }
+
+        public IActionResult Logout()
+        {
+            return RedirectToAction("Login");
         }
     }
 }
