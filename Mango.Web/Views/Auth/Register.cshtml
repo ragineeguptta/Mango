@@ -1,0 +1,41 @@
+﻿@model RegistrationRequestDto
+
+
+
+<form method="post" asp-action="Register">
+    <div class="login-card">
+
+        <h2 class="login-title">Create Account</h2>
+
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <input asp-for="Email" class="form-control" placeholder="Enter Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <input asp-for="Name" class="form-control" placeholder="Enter Full Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <input asp-for="PhoneNumber" class="form-control" placeholder="Enter Phone Number" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-4">
+            <input asp-for="Password" type="password" class="form-control" placeholder="Enter Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="mb-4">
+            <select asp-for="Role" class="form-select" asp-items="ViewBag.RoleList">
+                <option disabled selected>Select Role</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-login">Register</button>
+
+    </div>
+</form>
